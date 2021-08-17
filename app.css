@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+body{
+    font-family: 'Teko', sans-serif;
+}
+
+.playerBtn {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.choosen {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .choosen {
+        width: 100px;
+        height: 100px;
+    }   
+    .playerBtn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.m-3 {
+    margin: 30px;
+}
+
+.m-5 {
+    margin: 50px;
+}
+
+#versusImg {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30%;
+    transition: 0.2s ease-in;
+}
+
+.img-container:hover {
+    background-color: rgba(123, 123, 123, 0.5);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.round-win {
+    opacity: 0;
+}
+
+.label {
+    padding: 5px 15px;
+    background-color: rgba(125, 205, 208, 0.2);
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.bg-red {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.bg-green {
+    background-color: rgba(0, 255, 21, 0.2);
+}
+
+#modal {
+    padding: 50px 75px;
+    background-color: cadetblue;
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./app.css">
+    <title>Sssten App</title>
+</head>
+
+<body>
+    <aside>
+        <div id="modal">
+            <div class="modal-content text-center">
+                <h3>Player Won!</h3>
+                <button>restart</button>
+              </div>
+        </div>
+    </aside>
+    <main>
+        <div class="text-center">
+            <h1>Sssten</h1>
+            <p>a suten app like paper, rock, scissor</p>
+        </div>
+        <section id="versus">
+            <div class="flex justify-center align-center m-3">
+                <div class="flex-column text-center">
+                    <span class="label">You</span>
+                    <img src="./assets/hands/svg/018-thumb up.svg" class="choosen" id="playerChoose"  alt="jempol">
+                    <span id="playerWin" class="bg-green round-win label">Winner</span>
+                </div>
+                <img src="./assets/hands/svg/versus.svg" class="m-3" id="versusImg" alt="vs">
+                <div class="flex-column text-center">
+                    <span class="label bg-red">Enemy</span>
+                    <img src="./assets/hands/svg/005-up.svg" class="choosen" id="compChoose" alt="telunjuk">
+                    <span id="compWin" class="bg-green round-win label">Winner</span>
+                </div>
+            </div>
+        </section>
+        <section id="choose">
+            <h3 class="text-center">Choose</h3>
+            <div class="flex justify-center align-center m-3">
+                <div class="img-container pointer">
+                    <img src="./assets/hands/svg/018-thumb up.svg" class="playerBtn" value="jempol" alt="jempol">
+                </div>
+                <div class="img-container pointer">
+                    <img src="./assets/hands/svg/005-up.svg" class="playerBtn" value="telunjuk" alt="telunjuk">
+                </div>
+                <div class="img-container pointer">
+                    <img src="./assets/hands/svg/011-pinky finger.svg" class="playerBtn" value="kelingking" alt="kelingking">
+                </div>
+            </div>
+            <h5 class="text-center" id="attempt">5 Round!</h5>
+        </section>
+    </main>
+    <script src="./main.js"></script>
+</body>
+
+</html>
