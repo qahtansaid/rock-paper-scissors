@@ -1,5 +1,5 @@
 const myArray = ["jempol", "kelingking", "telunjuk"];
-const imgArr = ["./assets/hands/svg/018-thumb up.svg","./assets/hands/svg/011-pinky finger.svg","./assets/hands/svg/005-up.svg"]
+const imgArr = ["./assets/hands/svg/018-thumb up.svg", "./assets/hands/svg/011-pinky finger.svg", "./assets/hands/svg/005-up.svg"]
 let playerScore = 0;
 let computerScore = 0;
 let totalMatch = 5;
@@ -9,25 +9,24 @@ let compElement = document.getElementById('compChoose');
 let winPlayerElement = document.getElementById('playerWin');
 let winCompElement = document.getElementById('compWin');
 let modalElement = document.getElementById('modal');
-function playRound(playerSelection) {
+let resultElement = document.getElementById('resultWin');
+let resetBtnElement = document.getElementById('restart-btn');
+const playRound = (playerSelection) => {
     let computerSelection = computerPlay();
-    playerElement.src = imgArr[myArray.findIndex((val)=> val == playerSelection)];
-    compElement.src = imgArr[myArray.findIndex((val)=> val == computerSelection)];
-    if(playerScore == totalMatch || computerScore == totalMatch){
-        console.log("player", playerScore);
-        console.log("comp",computerScore);
+    playerElement.src = imgArr[myArray.findIndex((val) => val == playerSelection)];
+    compElement.src = imgArr[myArray.findIndex((val) => val == computerSelection)];
+    if (playerScore == totalMatch || computerScore == totalMatch) {
         modalElement.style.display = "block"
-        
+        resultElement.innerHTML = getWinner();
     } else {
-        if(playerSelection == computerSelection ){
+        if (playerSelection == computerSelection) {
             winCompElement.style.opacity = 0;
             winPlayerElement.style.opacity = 0;
-        } else if 
-        (
+        } else if (
             playerSelection == 'jempol' && computerSelection == 'telunjuk' ||
             playerSelection == 'telunjuk' && computerSelection == 'kelingking' ||
             playerSelection == 'kelingking' && computerSelection == 'jempol'
-        ){
+        ) {
             // console.log("win");
             winPlayerElement.style.opacity = 1;
             winCompElement.style.opacity = 0;
@@ -41,19 +40,30 @@ function playRound(playerSelection) {
     }
 
 }
-function computerPlay() {
+const computerPlay = () => {
     return myArray[Math.floor(Math.random() * myArray.length)];
-  }
-
-
+}
+const getWinner = () => {
+    let result = "";
+    if (playerScore == totalMatch) {
+        result = "Player Win!."
+    } else if (computerScore == totalMatch) {
+        result = "You Lose!."
+    }
+    return result;
+}
+const resetGame = () => {
+    playerScore = 0;
+    computerScore = 0;
+    totalMatch = 5;
+}
 buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
-    playRound(e.target.getAttribute("value"));
-  
-    //   if (playerScore === 5 || computerScore === 5) {
-    //     declareWinner();
-    //   }
+        playRound(e.target.getAttribute("value"));
+
     });
-  });
-  
-// console.log(playRound(playerSelection, computerSelection));
+});
+resetBtnElement.addEventListener("click", ()=>{
+    resetGame();
+    modalElement.style.display = "none";
+})

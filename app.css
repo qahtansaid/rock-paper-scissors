@@ -97,14 +97,47 @@ body{
     background-color: rgba(0, 255, 21, 0.2);
 }
 
-#modal {
-    padding: 50px 75px;
-    background-color: cadetblue;
+#modal::before {
     position: absolute;
+    content: "";
+    /* display: none; */
+    opacity: 0.3;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+}
+#modal {
     display: none;
+}
+#modal .modal-content {
+    padding: 50px 75px;
+    background-color: rgb(155, 155, 155);
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.btn {
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+.btn:hover {
+    opacity: 0.6;
+}
+
+.btn-info{
+    color: white;
+    background-color: #0084ff;
 }
